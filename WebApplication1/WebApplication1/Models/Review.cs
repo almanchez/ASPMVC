@@ -6,7 +6,7 @@
 
         public int AlbumID { get; set; }
 
-        //public Album Album { get; set; }
+        public Album Album { get; set; }
 
         public string Contents { get; set; }
 

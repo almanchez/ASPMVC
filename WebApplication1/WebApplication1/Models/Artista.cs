@@ -14,7 +14,7 @@ namespace WebApplication1.Models
 
         public String Name { get; set; }
 
-      //  public virtual  List <Album> Albums { get; set; }
+        public virtual  List <Album> Albums { get; set; }
 
     }
 }
