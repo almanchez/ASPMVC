@@ -10,11 +10,11 @@ namespace WebApplication1.Models
 
     public class Artista
     {
-        public int ArtistID { get; set; }
+        public int ArtistaID { get; set; }
 
         public String Name { get; set; }
 
-        public  List <Album> Albums { get; set; }
+      //  public virtual  List <Album> Albums { get; set; }
 
     }
 }
