@@ -6,7 +6,8 @@
 
         public int Title { get; set; }
 
-        public int Artist { get; set; }
+        //para obener una vista de la clase referenciada: alt+f12
+        public Artista Artist { get; set; }
 
 
     }
