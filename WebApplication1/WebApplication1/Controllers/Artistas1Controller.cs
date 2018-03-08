@@ -10,17 +10,17 @@ using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
 {
-    public class ArtistasController : Controller
+    public class Artistas1Controller : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
 
-        // GET: Artistas
+        // GET: Artistas1
         public ActionResult Index()
         {
             return View(db.Artistas.ToList());
         }
 
-        // GET: Artistas/Details/5
+        // GET: Artistas1/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -35,13 +35,13 @@ namespace WebApplication1.Controllers
             return View(artista);
         }
 
-        // GET: Artistas/Create
+        // GET: Artistas1/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Artistas/Create
+        // POST: Artistas1/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -58,7 +58,7 @@ namespace WebApplication1.Controllers
             return View(artista);
         }
 
-        // GET: Artistas/Edit/5
+        // GET: Artistas1/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -73,7 +73,7 @@ namespace WebApplication1.Controllers
             return View(artista);
         }
 
-        // POST: Artistas/Edit/5
+        // POST: Artistas1/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -89,7 +89,7 @@ namespace WebApplication1.Controllers
             return View(artista);
         }
 
-        // GET: Artistas/Delete/5
+        // GET: Artistas1/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
@@ -104,7 +104,7 @@ namespace WebApplication1.Controllers
             return View(artista);
         }
 
-        // POST: Artistas/Delete/5
+        // POST: Artistas1/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)

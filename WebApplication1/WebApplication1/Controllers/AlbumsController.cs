@@ -6,111 +6,112 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using MigrationsAutomaticDemo;
 using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
 {
-    public class ArtistasController : Controller
+    public class AlbumsController : Controller
     {
-        private ApplicationDbContext db = new ApplicationDbContext();
+        private BlogContext db = new BlogContext();
 
-        // GET: Artistas
+        // GET: Albums
         public ActionResult Index()
         {
-            return View(db.Artistas.ToList());
+            return View(db.Albums.ToList());
         }
 
-        // GET: Artistas/Details/5
+        // GET: Albums/Details/5
         public ActionResult Details(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Artista artista = db.Artistas.Find(id);
-            if (artista == null)
+            Album album = db.Albums.Find(id);
+            if (album == null)
             {
                 return HttpNotFound();
             }
-            return View(artista);
+            return View(album);
         }
 
-        // GET: Artistas/Create
+        // GET: Albums/Create
         public ActionResult Create()
         {
             return View();
         }
 
-        // POST: Artistas/Create
+        // POST: Albums/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "ArtistaID,Name")] Artista artista)
+        public ActionResult Create([Bind(Include = "AlbumID,Title,ReviewID")] Album album)
         {
             if (ModelState.IsValid)
             {
-                db.Artistas.Add(artista);
+                db.Albums.Add(album);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            return View(artista);
+            return View(album);
         }
 
-        // GET: Artistas/Edit/5
+        // GET: Albums/Edit/5
         public ActionResult Edit(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Artista artista = db.Artistas.Find(id);
-            if (artista == null)
+            Album album = db.Albums.Find(id);
+            if (album == null)
             {
                 return HttpNotFound();
             }
-            return View(artista);
+            return View(album);
         }
 
-        // POST: Artistas/Edit/5
+        // POST: Albums/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "ArtistaID,Name")] Artista artista)
+        public ActionResult Edit([Bind(Include = "AlbumID,Title,ReviewID")] Album album)
         {
             if (ModelState.IsValid)
             {
-                db.Entry(artista).State = EntityState.Modified;
+                db.Entry(album).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(artista);
+            return View(album);
         }
 
-        // GET: Artistas/Delete/5
+        // GET: Albums/Delete/5
         public ActionResult Delete(int? id)
         {
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-            Artista artista = db.Artistas.Find(id);
-            if (artista == null)
+            Album album = db.Albums.Find(id);
+            if (album == null)
             {
                 return HttpNotFound();
             }
-            return View(artista);
+            return View(album);
         }
 
-        // POST: Artistas/Delete/5
+        // POST: Albums/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            Artista artista = db.Artistas.Find(id);
-            db.Artistas.Remove(artista);
+            Album album = db.Albums.Find(id);
+            db.Albums.Remove(album);
             db.SaveChanges();
             return RedirectToAction("Index");
         }

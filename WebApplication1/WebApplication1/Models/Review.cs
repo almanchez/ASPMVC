@@ -8,7 +8,7 @@ namespace WebApplication1.Models
 
         public int AlbumID { get; set; }
 
-       // public virtual Album Album { get; set; }
+        public virtual Album Album { get; set; }
 
         public string Contents { get; set; }
 
