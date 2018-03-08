@@ -12,7 +12,7 @@ namespace WebApplication1.Controllers
 {
     public class ReviewsController : Controller
     {
-        private WebApplication1Context db = new WebApplication1Context();
+        private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Reviews
         public ActionResult Index()

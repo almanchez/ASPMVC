@@ -12,6 +12,8 @@ namespace WebApplication1.Models
 
         public string Contents { get; set; }
 
+        [Required()]  
+        [Display(Name ="Correo Electrónico")]
         [DataType(DataType.EmailAddress)]
 
         public string ReviewEmail { get; set; }
