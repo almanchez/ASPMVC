@@ -17,8 +17,7 @@ namespace WebApplication1.Controllers
         // GET: Reviews
         public ActionResult Index()
         {
-            var reviews = db.Reviews.Include(r => r.Album);
-            return View(reviews.ToList());
+            return View(db.Reviews.ToList());
         }
 
         // GET: Reviews/Details/5
@@ -39,7 +38,6 @@ namespace WebApplication1.Controllers
         // GET: Reviews/Create
         public ActionResult Create()
         {
-            ViewBag.AlbumID = new SelectList(db.Albums, "AlbumID", "AlbumID");
             return View();
         }
 
@@ -57,7 +55,6 @@ namespace WebApplication1.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.AlbumID = new SelectList(db.Albums, "AlbumID", "AlbumID", review.AlbumID);
             return View(review);
         }
 
@@ -73,7 +70,6 @@ namespace WebApplication1.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.AlbumID = new SelectList(db.Albums, "AlbumID", "AlbumID", review.AlbumID);
             return View(review);
         }
 
@@ -90,7 +86,6 @@ namespace WebApplication1.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.AlbumID = new SelectList(db.Albums, "AlbumID", "AlbumID", review.AlbumID);
             return View(review);
         }
 

@@ -1,4 +1,6 @@
-﻿namespace WebApplication1.Models
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace WebApplication1.Models
 {
     public class Review
     {
@@ -6,9 +8,11 @@
 
         public int AlbumID { get; set; }
 
-        public Album Album { get; set; }
+       // public virtual Album Album { get; set; }
 
         public string Contents { get; set; }
+
+        [DataType(DataType.EmailAddress)]
 
         public string ReviewEmail { get; set; }
 

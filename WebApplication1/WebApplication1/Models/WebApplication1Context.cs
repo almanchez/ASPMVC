@@ -18,6 +18,18 @@ namespace WebApplication1.Models
         public WebApplication1Context() : base("name=WebApplication1Context")
         {
         }
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            // other code 
+            Database.SetInitializer<WebApplication1Context>(null);
+            // more code
+        }
+
+        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        //{
+        //Database.SetInitializer<WebApplication1Context>(null);
+        //base.OnModelCreating(modelBuilder);
+        //}
 
         public System.Data.Entity.DbSet<WebApplication1.Models.Artista> Artistas { get; set; }
 
