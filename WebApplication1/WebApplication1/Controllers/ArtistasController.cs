@@ -36,6 +36,9 @@ namespace WebApplication1.Controllers
         }
 
         // GET: Artistas/Create
+
+        //this displays the form to the user
+        [Authorize()]
         public ActionResult Create()
         {
             return View();
@@ -44,6 +47,11 @@ namespace WebApplication1.Controllers
         // POST: Artistas/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        //accepts the input from the user 
+        public ActionResult Action()
+        {
+            return View();
+        }
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "ArtistaID,Name")] Artista artista)

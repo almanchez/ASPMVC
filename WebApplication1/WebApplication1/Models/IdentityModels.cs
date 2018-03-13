@@ -33,5 +33,7 @@ namespace WebApplication1.Models
         public System.Data.Entity.DbSet<WebApplication1.Models.Review> Reviews { get; set; }
 
         public System.Data.Entity.DbSet<WebApplication1.Models.Artista> Artistas { get; set; }
+
+        public System.Data.Entity.DbSet<WebApplication1.Models.Album> Albums { get; set; }
     }
 }
